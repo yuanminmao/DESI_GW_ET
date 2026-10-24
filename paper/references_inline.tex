@@ -1,0 +1,574 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{46}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Riess}\ \emph {et~al.}(1998)\citenamefont {Riess}
+  \emph {et~al.}}]{Riess1998}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~G.}\ \bibnamefont
+  {Riess}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
+  {Observational evidence from supernovae for an accelerating universe and a
+  cosmological constant},\ }\href {https://doi.org/10.1086/300499} {\bibfield
+  {journal} {\bibinfo  {journal} {Astron. J.}\ }\textbf {\bibinfo {volume}
+  {116}},\ \bibinfo {pages} {1009} (\bibinfo {year} {1998})},\ \Eprint
+  {https://arxiv.org/abs/astro-ph/9805201} {arXiv:astro-ph/9805201 [astro-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Perlmutter}\ \emph {et~al.}(1999)\citenamefont
+  {Perlmutter} \emph {et~al.}}]{Perlmutter1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Perlmutter}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
+  {Measurements of omega and lambda from 42 high-redshift supernovae},\ }\href
+  {https://doi.org/10.1086/307221} {\bibfield  {journal} {\bibinfo  {journal}
+  {Astrophys. J.}\ }\textbf {\bibinfo {volume} {517}},\ \bibinfo {pages} {565}
+  (\bibinfo {year} {1999})},\ \Eprint {https://arxiv.org/abs/astro-ph/9812133}
+  {arXiv:astro-ph/9812133 [astro-ph]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Planck Collaboration}}(2020)}]{2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {Planck 2018
+  results. vi. cosmological parameters},\ }\href
+  {https://doi.org/10.1051/0004-6361/201833910} {\bibfield  {journal} {\bibinfo
+   {journal} {Astron. Astrophys.}\ }\textbf {\bibinfo {volume} {641}},\
+  \bibinfo {pages} {A6} (\bibinfo {year} {2020})},\ \Eprint
+  {https://arxiv.org/abs/1807.06209} {arXiv:1807.06209 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Weinberg}(1989)}]{Weinberg1989}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Weinberg}},\ }\bibfield  {title} {\bibinfo {title} {The cosmological
+  constant problem},\ }\href {https://doi.org/10.1103/RevModPhys.61.1}
+  {\bibfield  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf
+  {\bibinfo {volume} {61}},\ \bibinfo {pages} {1} (\bibinfo {year}
+  {1989})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{DESI
+  Collaboration}}(2025{\natexlab{a}})}]{DESIDR2Cosmology}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{DESI
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {{DESI DR2 Results
+  II: Measurements of Baryon Acoustic Oscillations and Cosmological
+  Constraints}},\ }\href {https://doi.org/10.1103/tr6y-kpc6} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume}
+  {112}},\ \bibinfo {pages} {083515} (\bibinfo {year} {2025}{\natexlab{a}})},\
+  \Eprint {https://arxiv.org/abs/2503.14738} {arXiv:2503.14738 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{DESI
+  Collaboration}}(2025{\natexlab{b}})}]{DESIDR2ExtendedDE}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{DESI
+  Collaboration}}},\ }\bibfield  {title} {\bibinfo {title} {Extended dark
+  energy analysis using DESI DR2 BAO measurements},\ }\href
+  {https://doi.org/10.1103/w4c6-1r5j} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
+  {pages} {083511} (\bibinfo {year} {2025}{\natexlab{b}})},\ \Eprint
+  {https://arxiv.org/abs/2503.14743} {arXiv:2503.14743 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gu}\ \emph {et~al.}(2025)\citenamefont {Gu},
+  \citenamefont {Wang}, \citenamefont {Wang}, \citenamefont {Zhao} \emph
+  {et~al.}}]{Gu_2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Gu}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Wang}}, \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Wang}}, \bibinfo {author}
+  {\bibfnamefont {G.-B.}\ \bibnamefont {Zhao}}, \emph {et~al.},\ }\bibfield
+  {title} {\bibinfo {title} {Dynamical dark energy in light of the DESI DR2
+  baryonic acoustic oscillations measurements},\ }\href
+  {https://doi.org/10.1038/s41550-025-02669-6} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature Astronomy}\ }\textbf {\bibinfo {volume} {9}},\ \bibinfo
+  {pages} {1879} (\bibinfo {year} {2025})},\ \Eprint
+  {https://arxiv.org/abs/2504.06118} {arXiv:2504.06118 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Raveri}\ \emph
+  {et~al.}(2017)\citenamefont {Raveri}, \citenamefont {Bull},
+  \citenamefont {Silvestri},\ and\ \citenamefont {Pogosian}}]{Raveri2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Raveri}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Bull}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Silvestri}},\ and\
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Pogosian}},\ }\bibfield
+  {title} {\bibinfo {title} {Priors on the effective dark energy equation of
+  state in scalar-tensor theories},\ }\href
+  {https://doi.org/10.1103/PhysRevD.96.083509} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {96}},\ \bibinfo
+  {pages} {083509} (\bibinfo {year} {2017})},\ \Eprint
+  {https://arxiv.org/abs/1703.05297} {arXiv:1703.05297 [astro-ph.CO]}
+
+
+\bibitem{Phillips1993}%
+M.~M.~Phillips,
+``The Absolute Magnitudes of Type IA Supernovae,''
+\href{https://doi.org/10.1086/186970}
+{Astrophys. J. Lett. \textbf{413}, L105 (1993)}.
+
+\bibitem{Guy2007}%
+J.~Guy \emph{et al.},
+``SALT2: Using distant supernovae to improve the use of Type Ia supernovae as distance indicators,''
+\href{https://doi.org/10.1051/0004-6361:20066930}
+{Astron. Astrophys. \textbf{466}, 11 (2007)},
+\href{https://arxiv.org/abs/astro-ph/0701828}
+{arXiv:astro-ph/0701828}.
+
+
+
+
+\bibitem{Scolnic2018}%
+D.~Scolnic \emph{et al.},
+``The Complete Light-curve Sample of Spectroscopically Confirmed Type Ia Supernovae from Pan-STARRS1 and the Pantheon Sample,''
+\href{https://doi.org/10.3847/1538-4357/aab9bb}
+{Astrophys. J. \textbf{859}, 101 (2018)},
+\href{https://arxiv.org/abs/1710.00845}
+{arXiv:1710.00845}.
+
+\bibitem{Brout2022}%
+D.~Brout \emph{et al.},
+``The Pantheon+ Analysis: Cosmological Constraints,''
+\href{https://doi.org/10.3847/1538-4357/ac8e04}
+{Astrophys. J. \textbf{938}, 110 (2022)},
+\href{https://arxiv.org/abs/2202.04077}
+{arXiv:2202.04077}.
+
+\bibitem{Kelly2010}%
+P.~L.~Kelly \emph{et al.},
+``Hubble Residuals and Host Galaxy Properties in the Nearby Supernova Factory,''
+\href{https://doi.org/10.1088/0004-637X/715/2/743}
+{Astrophys. J. \textbf{715}, 743 (2010)},
+\href{https://arxiv.org/abs/0912.0929}
+{arXiv:0912.0929}.
+
+\bibitem{Childress2014}%
+M.~Childress \emph{et al.},
+``Host Galaxy Properties and Hubble Residuals of Type Ia Supernovae,''
+\href{https://doi.org/10.1088/0004-637X/770/2/108}
+{Astrophys. J. \textbf{770}, 108 (2014)},
+\href{https://arxiv.org/abs/1409.0009}
+{arXiv:1409.0009}.
+%  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Schutz}(1986)}]{Schutz1986}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~F.}\ \bibnamefont
+  {Schutz}},\ }\bibfield  {title} {\bibinfo {title} {Determining the hubble
+  constant from gravitational wave observations},\ }\href
+  {https://doi.org/10.1038/323310a0} {\bibfield  {journal} {\bibinfo  {journal}
+  {Nature}\ }\textbf {\bibinfo {volume} {323}},\ \bibinfo {pages} {310}
+  (\bibinfo {year} {1986})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Holz}\ and\ \citenamefont
+  {Hughes}(2005)}]{HolzHughes2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~E.}\ \bibnamefont
+  {Holz}}\ and\ \bibinfo {author} {\bibfnamefont {S.~A.}\ \bibnamefont
+  {Hughes}},\ }\bibfield  {title} {\bibinfo {title} {Using gravitational-wave
+  standard sirens},\ }\href {https://doi.org/10.1086/431341} {\bibfield
+  {journal} {\bibinfo  {journal} {Astrophys. J.}\ }\textbf {\bibinfo {volume}
+  {629}},\ \bibinfo {pages} {15} (\bibinfo {year} {2005})},\ \Eprint
+  {https://arxiv.org/abs/astro-ph/0504616} {arXiv:astro-ph/0504616 [astro-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{LIGO Scientific Collaboration}}\ \emph
+  {et~al.}(2017)\citenamefont {{LIGO Scientific Collaboration}}, \citenamefont
+  {{Virgo Collaboration}} \emph {et~al.}}]{Abbott2017GW170817}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{LIGO Scientific
+  Collaboration}}}, \bibinfo {author} {\bibnamefont {{Virgo Collaboration}}},
+  \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{GW170817}:
+  Observation of gravitational waves from a binary neutron star inspiral},\ }
+  \href {https://doi.org/10.1103/PhysRevLett.119.161101} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {119}},\
+  \bibinfo {pages} {161101} (\bibinfo {year} {2017})},\ \Eprint
+  {https://arxiv.org/abs/1710.05832} {arXiv:1710.05832 [gr-qc]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{LIGO Scientific Collaboration}}\ \emph
+  {et~al.}(2017)\citenamefont {{LIGO Scientific Collaboration}}, \citenamefont
+  {{Virgo Collaboration}} \emph {et~al.}}]{Abbott2017StandardSiren}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{LIGO Scientific
+  Collaboration}}}, \bibinfo {author} {\bibnamefont {{Virgo Collaboration}}},
+  \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {A gravitational-wave
+  standard siren measurement of the Hubble constant},\ }\href
+  {https://doi.org/10.1038/nature24471} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {551}},\ \bibinfo {pages}
+  {85} (\bibinfo {year} {2017})},\ \Eprint {https://arxiv.org/abs/1710.05835}
+  {arXiv:1710.05835 [astro-ph.CO]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhao}\ \emph
+  {et~al.}(2011)\citenamefont {Zhao}, \citenamefont {Van
+  Den~Broeck}, \citenamefont {Baskaran},\ and\ \citenamefont {Li}}]{Zhao2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Zhao}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Van
+  Den~Broeck}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Baskaran}},\ and\ \bibinfo {author} {\bibfnamefont {T.~G.~F.}\ \bibnamefont
+  {Li}},\ }\bibfield  {title} {\bibinfo {title} {Determination of dark energy
+  by the Einstein Telescope: Comparing with CMB, BAO, and SNIa observations},\
+  }\href {https://doi.org/10.1103/PhysRevD.83.023005} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {83}},\
+  \bibinfo {pages} {023005} (\bibinfo {year} {2011})},\ \Eprint
+  {https://arxiv.org/abs/1009.0206} {arXiv:1009.0206 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Maggiore}\ \emph
+  {et~al.}(2020)\citenamefont {Maggiore} \emph
+  {et~al.}}]{ETDesign}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Maggiore}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Science
+  case for the Einstein Telescope},\ }\href {https://doi.org/10.1088/1475-7516/2020/03/050}
+  {\bibfield {journal} {\bibinfo {journal} {JCAP}\ }\bibinfo {volume} {03} (\bibinfo {year} {2020}) \bibinfo {pages} {050}},\
+  \Eprint
+  {https://arxiv.org/abs/1912.02622} {arXiv:1912.02622 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Branchesi}\ \emph {et~al.}(2023)\citenamefont
+  {Branchesi} \emph {et~al.}}]{Branchesi2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Branchesi}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Science
+  with the Einstein Telescope: A comparison of different designs},\ }\href {https://doi.org/10.1088/1475-7516/2023/07/068}
+  {\bibfield {journal} {\bibinfo {journal} {JCAP}\ }\bibinfo {volume} {07} (\bibinfo {year} {2023}) \bibinfo {pages} {068}},\
+  \Eprint
+  {https://arxiv.org/abs/2303.15923} {arXiv:2303.15923 [gr-qc]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Chevallier}\ and\ \citenamefont
+  {Polarski}(2001)}]{Chevallier2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Chevallier}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Polarski}},\ }\bibfield  {title} {\bibinfo {title} {Accelerating universes
+  with scaling dark matter},\ }\href
+  {https://doi.org/10.1142/S0218271801000822} {\bibfield  {journal} {\bibinfo
+  {journal} {Int. J. Mod. Phys. D}\ }\textbf {\bibinfo {volume} {10}},\
+  \bibinfo {pages} {213} (\bibinfo {year} {2001})},\ \Eprint
+  {https://arxiv.org/abs/gr-qc/0009008} {arXiv:gr-qc/0009008 [gr-qc]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Linder}(2003)}]{Linder2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~V.}\ \bibnamefont
+  {Linder}},\ }\bibfield  {title} {\bibinfo {title} {Exploring the expansion
+  history of the universe},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.90.091301} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {90}},\
+  \bibinfo {pages} {091301} (\bibinfo {year} {2003})},\ \Eprint
+  {https://arxiv.org/abs/astro-ph/0208512} {arXiv:astro-ph/0208512 [astro-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sathyaprakash}\ and\ \citenamefont
+  {Schutz}(2009)}]{Sathyaprakash_2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~S.}\ \bibnamefont
+  {Sathyaprakash}}\ and\ \bibinfo {author} {\bibfnamefont {B.~F.}\ \bibnamefont
+  {Schutz}},\ }\bibfield  {title} {\bibinfo {title} {Physics, astrophysics and
+  cosmology with gravitational waves},\ }\href
+  {https://doi.org/10.12942/lrr-2009-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Living Rev. Relativ.}\ }\textbf {\bibinfo {volume} {12}},\
+  \bibinfo {pages} {2} (\bibinfo {year} {2009})},\ \Eprint
+  {https://arxiv.org/abs/0903.0338} {arXiv:0903.0338 [gr-qc]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Cai}\ and\ \citenamefont {Yang}(2017)}]{Cai_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.-G.}\ \bibnamefont
+  {Cai}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Yang}},\
+  }\bibfield  {title} {\bibinfo {title} {Estimating cosmological parameters by
+  the simulated data of gravitational waves from the Einstein Telescope},\
+  }\href {https://doi.org/10.1103/PhysRevD.95.044024} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {95}},\
+  \bibinfo {pages} {044024} (\bibinfo {year} {2017})},\ \Eprint
+  {https://arxiv.org/abs/1608.08008} {arXiv:1608.08008 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Blanchet}(2014)}]{Blanchet2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Blanchet}},\ }\bibfield  {title} {\bibinfo {title} {Gravitational
+  radiation from post-Newtonian sources and inspiralling compact binaries},\ }
+  \href {https://doi.org/10.12942/lrr-2014-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Living Rev. Relativ.}\ }\textbf {\bibinfo {volume} {17}},\
+  \bibinfo {pages} {2} (\bibinfo {year} {2014})},\ \Eprint
+  {https://arxiv.org/abs/1310.1528} {arXiv:1310.1528 [gr-qc]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Schöneberg}(2026)}]{Schoneberg2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Schöneberg}},\ }\href@noop {} {\bibinfo {title} {The 2024 {BBN} baryon
+  abundance update}} (\bibinfo {year} {2026}),\ \Eprint
+  {https://arxiv.org/abs/2401.15054} {arXiv:2401.15054 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rosenberg}\ \emph {et~al.}(2022)\citenamefont
+  {Rosenberg}, \citenamefont {Gratton},\ and\ \citenamefont
+  {Efstathiou}}]{Rosenberg_2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Rosenberg}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Gratton}},\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Efstathiou}},\ }\bibfield  {title} {\bibinfo {title} {{CMB} power spectra
+  and cosmological parameters from {Planck PR4} with {CamSpec}},\ }\href
+  {https://doi.org/10.1093/mnras/stac2744} {\bibfield  {journal} {\bibinfo
+  {journal} {Mon. Not. R. Astron. Soc.}\ }\textbf {\bibinfo {volume} {517}},\
+  \bibinfo {pages} {4620} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cutler}\ and\ \citenamefont
+  {Holz}(2009)}]{Cutler_2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Cutler}}\ and\ \bibinfo {author} {\bibfnamefont {D.~E.}\ \bibnamefont
+  {Holz}},\ }\bibfield  {title} {\bibinfo {title} {Ultrahigh precision
+  cosmology from gravitational waves},\ }\href
+  {https://doi.org/10.1103/PhysRevD.80.104009} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {80}},\ \bibinfo
+  {pages} {104009} (\bibinfo {year} {2009})},\ \Eprint
+  {https://arxiv.org/abs/0906.3752} {arXiv:0906.3752 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem{Hild_2011}%
+S.~Hild \emph{et al.},
+``Sensitivity studies for third-generation gravitational wave observatories,''
+\href{https://doi.org/10.1088/0264-9381/28/9/094013}
+{Class. Quantum Grav. \textbf{28}, 094013 (2011)}.
+\bibitem [{\citenamefont {Ozel}\ and\ \citenamefont
+  {Freire}(2016)}]{Ozel_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Ozel}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Freire}},\
+  }\bibfield  {title} {\bibinfo {title} {Masses, radii, and the equation of
+  state of neutron stars},\ }\href
+  {https://doi.org/10.1146/annurev-astro-081915-023322} {\bibfield  {journal}
+  {\bibinfo  {journal} {Annu. Rev. Astron. Astrophys.}\ }\textbf {\bibinfo
+  {volume} {54}},\ \bibinfo {pages} {401} (\bibinfo {year} {2016})},\ \Eprint
+  {https://arxiv.org/abs/1603.02698} {arXiv:1603.02698 [astro-ph.HE]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Farrow}\ \emph {et~al.}(2019)\citenamefont {Farrow},
+  \citenamefont {Zhu},\ and\ \citenamefont {Thrane}}]{Farrow_2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Farrow}}, \bibinfo {author} {\bibfnamefont {X.-J.}\ \bibnamefont {Zhu}},\
+  and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Thrane}},\
+  }\bibfield  {title} {\bibinfo {title} {The mass distribution of galactic
+  double neutron stars},\ }\href {https://doi.org/10.3847/1538-4357/ab12e3}
+  {\bibfield  {journal} {\bibinfo  {journal} {Astrophys. J.}\ }\textbf
+  {\bibinfo {volume} {876}},\ \bibinfo {pages} {18} (\bibinfo {year} {2019})},\
+  \Eprint {https://arxiv.org/abs/1902.03300} {arXiv:1902.03300 [astro-ph.HE]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Torrado}\ and\ \citenamefont
+  {Lewis}(2021)}]{Torrado2021}%
+  \BibitemOpen
+  \bibfield {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Torrado}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Lewis}},\ }\bibfield {title} {\bibinfo {title} {{Cobaya}: Code for
+  Bayesian analysis of hierarchical physical models},\ }\href {https://doi.org/10.1088/1475-7516/2021/05/057}
+  {\bibfield {journal} {\bibinfo {journal} {JCAP}\ }\bibinfo {volume} {05} (\bibinfo {year} {2021}) \bibinfo {pages} {057}},\
+  \Eprint {https://arxiv.org/abs/2005.05290} {arXiv:2005.05290 [astro-ph.IM]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gelman}\ and\ \citenamefont
+  {Rubin}(1992)}]{GelmanRubin}%
+  \BibitemOpen
+  \bibfield {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Gelman}}\ and\ \bibinfo {author} {\bibfnamefont {D.~B.}\ \bibnamefont
+  {Rubin}},\ }\bibfield {title} {\bibinfo {title} {Inference from iterative
+  simulation using multiple sequences},\ }\href
+  {https://doi.org/10.1214/ss/1177011136} {\bibfield {journal} {\bibinfo
+  {journal} {Stat. Sci.}\ }\textbf {\bibinfo {volume} {7}},\ \bibinfo
+  {pages} {457} (\bibinfo {year} {1992})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lewis}(2025)}]{Lewis_2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Lewis}},\ }\bibfield  {title} {\bibinfo {title} {GetDist: A Python package
+  for analysing Monte Carlo samples},\ }\href {https://doi.org/10.1088/1475-7516/2025/08/025}
+  {\bibfield {journal} {\bibinfo {journal} {JCAP}\ }\bibinfo {volume} {08} (\bibinfo {year} {2025}) \bibinfo {pages} {025}},\
+  \Eprint
+  {https://arxiv.org/abs/1910.13970} {arXiv:1910.13970 [astro-ph.IM]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dembinski}\ \emph
+  {et~al.}(2020)\citenamefont {Dembinski}, \citenamefont {Ongmongkolkul}
+  \emph {et~al.}}]{Dembinski2020}%
+  \BibitemOpen
+  \bibfield {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Dembinski}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Ongmongkolkul}}, \emph {et~al.},\ }\href
+  {https://doi.org/10.5281/zenodo.3949207} {\bibinfo {title}
+  {{scikit-hep/iminuit}}} (\bibinfo {year} {2020})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wilks}(1938)}]{Wilks1938}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~S.}\ \bibnamefont
+  {Wilks}},\ }\bibfield  {title} {\bibinfo {title} {The large-sample
+  distribution of the likelihood ratio for testing composite hypotheses},\
+  }\href {https://doi.org/10.1214/aoms/1177732360} {\bibfield  {journal}
+  {\bibinfo  {journal} {Ann. Math. Stat.}\ }\textbf {\bibinfo {volume} {9}},\
+  \bibinfo {pages} {60} (\bibinfo {year} {1938})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cai}\ \emph {et~al.}(2010)\citenamefont {Cai},
+  \citenamefont {Saridakis}, \citenamefont {Setare},\ and\ \citenamefont
+  {Xia}}]{CaiQuintom2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.-F.}\ \bibnamefont
+  {Cai}}, \bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont {Saridakis}},
+  \bibinfo {author} {\bibfnamefont {M.~R.}\ \bibnamefont {Setare}},\ and\
+  \bibinfo {author} {\bibfnamefont {J.-Q.}\ \bibnamefont {Xia}},\ }\bibfield
+  {title} {\bibinfo {title} {Quintom cosmology: Theoretical implications and
+  observations},\ }\href {https://doi.org/10.1016/j.physrep.2010.04.001}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rep.}\ }\textbf {\bibinfo
+  {volume} {493}},\ \bibinfo {pages} {1} (\bibinfo {year} {2010})},\ \Eprint
+  {https://arxiv.org/abs/0909.2776} {arXiv:0909.2776 [hep-th]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Chen}\ \emph {et~al.}(2024)\citenamefont {Chen},
+  \citenamefont {Talbot},\ and\ \citenamefont {Chase}}]{ChenTalbotChase2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.-Y.}\ \bibnamefont
+  {Chen}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Talbot}},\ and\
+  \bibinfo {author} {\bibfnamefont {E.~A.}\ \bibnamefont {Chase}},\ }\bibfield
+  {title} {\bibinfo {title} {Mitigating the counterpart selection effect for
+  standard sirens},\ }\href {https://doi.org/10.1103/PhysRevLett.132.191003}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {132}},\ \bibinfo {pages} {191003} (\bibinfo {year}
+  {2024})},\ \Eprint {https://arxiv.org/abs/2307.10402} {arXiv:2307.10402
+  [astro-ph.CO]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Holz}\ and\ \citenamefont
+  {Linder}(2005)}]{HolzLinder2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~E.}\ \bibnamefont
+  {Holz}}\ and\ \bibinfo {author} {\bibfnamefont {E.~V.}\ \bibnamefont
+  {Linder}},\ }\bibfield  {title} {\bibinfo {title} {Safety in numbers:
+  Gravitational lensing degradation of the luminosity distance--redshift
+  relation},\ }\href {https://doi.org/10.1086/432085} {\bibfield  {journal}
+  {\bibinfo  {journal} {Astrophys. J.}\ }\textbf {\bibinfo {volume} {631}},\
+  \bibinfo {pages} {678} (\bibinfo {year} {2005})},\ \Eprint
+  {https://arxiv.org/abs/astro-ph/0412173} {arXiv:astro-ph/0412173}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nicolaou}\ \emph {et~al.}(2020)\citenamefont
+  {Nicolaou}, \citenamefont {Lahav}, \citenamefont {Lemos}, \citenamefont
+  {Hartley},\ and\ \citenamefont {Braden}}]{Nicolaou2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Nicolaou}}, \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Lahav}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Lemos}}, \bibinfo
+  {author} {\bibfnamefont {W.}~\bibnamefont {Hartley}},\ and\ \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Braden}},\ }\bibfield  {title} {\bibinfo
+  {title} {The impact of peculiar velocities on the estimation of the hubble
+  constant from gravitational wave standard sirens},\ }\href
+  {https://doi.org/10.1093/mnras/staa1120} {\bibfield  {journal} {\bibinfo
+  {journal} {Mon. Not. R. Astron. Soc.}\ }\textbf {\bibinfo {volume} {495}},\
+  \bibinfo {pages} {90} (\bibinfo {year} {2020})},\ \Eprint
+  {https://arxiv.org/abs/1909.09609} {arXiv:1909.09609 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Essick}\ and\ \citenamefont
+  {Holz}(2019)}]{EssickHolz2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Essick}}\ and\ \bibinfo {author} {\bibfnamefont {D.~E.}\ \bibnamefont
+  {Holz}},\ }\bibfield  {title} {\bibinfo {title} {Calibrating
+  gravitational-wave detectors with {GW170817}},\ }\href
+  {https://doi.org/10.1088/1361-6382/ab2142} {\bibfield  {journal} {\bibinfo
+  {journal} {Class. Quantum Gravity}\ }\textbf {\bibinfo {volume} {36}},\
+  \bibinfo {pages} {125002} (\bibinfo {year} {2019})},\ \Eprint
+  {https://arxiv.org/abs/1902.08076} {arXiv:1902.08076 [astro-ph.IM]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {dos Santos}\ \emph {et~al.}(2025)}]{Santos2025}%
+  \BibitemOpen
+  \bibfield {author} {\bibinfo {author} {\bibfnamefont {F.~B.~M.}\ \bibnamefont {dos Santos}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Morais}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Pan}},
+  \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Yang}},\ and\
+  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Di Valentino}},\ }
+  \bibfield {title} {\bibinfo {title} {A New Window on Dynamical Dark Energy:
+  Combining {DESI-DR2 BAO} with future Gravitational Wave Observations},\ }
+  \href@noop {} {(\bibinfo {year} {2025})},\ \Eprint
+  {https://arxiv.org/abs/2504.04646} {arXiv:2504.04646 [astro-ph.CO]}
+  \BibitemShut {NoStop}%
+\bibitem{Crittenden2012}%
+R.~G.~Crittenden, G.-B.~Zhao, L.~Pogosian, L.~Samushia, and X.~Zhang,
+``Fables of reconstruction: Controlling bias in the dark energy equation
+of state,''
+\href{https://doi.org/10.1088/1475-7516/2012/02/048}
+{J. Cosmol. Astropart. Phys. \textbf{02} (2012) 048},
+\Eprint{https://arxiv.org/abs/1112.1693}{arXiv:1112.1693 [astro-ph.CO]}.
+\bibitem{Zhao_2017}%
+G.-B.~Zhao \emph{et al.},
+``Dynamical dark energy in light of the latest observations,''
+\href{https://doi.org/10.1038/s41550-017-0216-z}
+{Nat. Astron. \textbf{1}, 627 (2017)},
+\Eprint{https://arxiv.org/abs/1701.08165}{arXiv:1701.08165 [astro-ph.CO]}.
+\bibitem{Lewis_2000}%
+A.~Lewis, A.~Challinor, and A.~Lasenby,
+``Efficient computation of CMB anisotropies in closed FRW models,''
+\href{https://doi.org/10.1086/309179}{Astrophys. J. \textbf{538}, 473
+(2000)}.
+\bibitem{Hahn_2023}%
+C.~Hahn \emph{et al.},
+``The DESI Bright Galaxy Survey: Final Target Selection, Design, and
+Validation,''
+\href{https://doi.org/10.3847/1538-3881/accff8}
+{Astron. J. \textbf{165}, 253 (2023)}.
+\bibitem{Zhou_2023}%
+R.~Zhou \emph{et al.},
+``Target Selection and Validation of DESI Luminous Red Galaxies,''
+\href{https://doi.org/10.3847/1538-3881/aca5fb}
+{Astron. J. \textbf{165}, 58 (2023)}.
+\bibitem{Raichoor_2023}%
+A.~Raichoor \emph{et al.},
+``Target Selection and Validation of DESI Emission Line Galaxies,''
+\href{https://doi.org/10.3847/1538-3881/acb213}
+{Astron. J. \textbf{165}, 126 (2023)}.
+\bibitem{Chaussidon_2023}%
+E.~Chaussidon \emph{et al.},
+``Target Selection and Validation of DESI Quasars,''
+\href{https://doi.org/10.3847/1538-4357/acb3c2}
+{Astrophys. J. \textbf{944}, 107 (2023)}.
+\bibitem{Raveri_2019}%
+M.~Raveri and W.~Hu,
+``Concordance and discordance in cosmology,''
+\href{https://doi.org/10.1103/PhysRevD.99.043506}
+{Phys. Rev. D \textbf{99}, 043506 (2019)}.
+\bibitem{Huterer_2003}%
+D.~Huterer and G.~Starkman,
+``Parametrization of dark-energy properties: A principal-component
+approach,''
+\href{https://doi.org/10.1103/PhysRevLett.90.031301}
+{Phys. Rev. Lett. \textbf{90}, 031301 (2003)}.
+\bibitem{Speagle2020}%
+J.~S.~Speagle,
+``{dynesty}: A dynamic nested sampling package for estimating Bayesian
+posteriors and evidences,''
+\href{https://doi.org/10.1093/mnras/staa278}
+{Mon. Not. R. Astron. Soc. \textbf{493}, 3132 (2020)},
+\Eprint{https://arxiv.org/abs/1904.02180}{arXiv:1904.02180 [astro-ph.IM]}.
+
+
+
+
+\end{thebibliography}%

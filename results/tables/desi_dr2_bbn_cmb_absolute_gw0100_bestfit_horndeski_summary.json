@@ -1,0 +1,71 @@
+{
+  "method": "joint minimum of chi2_data + A*chi2_prior over H0, Omega_m, omega_b, w1..w29",
+  "A": 1.0,
+  "prior": "D_w=(I-S)w; S=five-bin running average; chi2_prior=D_w^T C_Pi^-1 D_w",
+  "prior_source": "Gu et al., Nature Astronomy 2025, DOI 10.1038/s41550-025-02669-6, Methods eqs. (6)-(8)",
+  "global_optimum_proven": false,
+  "source_mcmc_converged": true,
+  "cases": [
+    {
+      "n_gw": 100,
+      "catalog": "results/catalogs/N0100/realization_0042.txt",
+      "start_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw0100_wz_summary.json",
+      "source_mcmc_converged": true,
+      "start_source": "previous local optimization output",
+      "chain_start_chi2_total": 119.47318626282467,
+      "start_chi2_total": 111.41877777683301,
+      "chi2_data": 110.76318877880423,
+      "chi2_prior": 0.6555887915345022,
+      "chi2_total": 111.41877757033873,
+      "chi2_components": {
+        "GW_absolute": 107.24668059042102,
+        "DESI_DR2_BAO": 3.460528490662643,
+        "CMB_theta_star": 0.0020709166935513933,
+        "BBN_omega_b_h2": 0.053908781027021124,
+        "Horndeski_prior": 0.6555887915344837
+      },
+      "parameters": {
+        "H0": 57.01592524267215,
+        "Omega_m": 0.43060351964167654,
+        "omega_b": 0.02210627506687616,
+        "w1": 0.8781619028360725,
+        "w2": 0.775890256603669,
+        "w3": 0.639583312323216,
+        "w4": 0.3774975844200851,
+        "w5": 0.056618964220058056,
+        "w6": -0.303196521674905,
+        "w7": -0.6524986254187718,
+        "w8": -0.9493617799189057,
+        "w9": -1.1510637787669304,
+        "w10": -1.2311592611595779,
+        "w11": -1.1791783285833508,
+        "w12": -1.029056360234964,
+        "w13": -0.8496369349429226,
+        "w14": -0.7255619744676414,
+        "w15": -0.7272266138070826,
+        "w16": -0.8794210012549994,
+        "w17": -1.1278105437030517,
+        "w18": -1.3774458145282011,
+        "w19": -1.52323505518304,
+        "w20": -1.5272863647247363,
+        "w21": -1.4135694549654156,
+        "w22": -1.2558139120385268,
+        "w23": -1.1059200009759684,
+        "w24": -0.9995555189150629,
+        "w25": -0.9352211214198445,
+        "w26": -0.9056603060830568,
+        "w27": -0.8974269651657615,
+        "w28": -0.8986442873503114,
+        "w29": -0.901295483324786
+      },
+      "optimization": {
+        "method": "L-BFGS-B local refinement of the joint chi2 objective",
+        "converged": true,
+        "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+        "iterations": 2,
+        "objective_evaluations": 330
+      }
+    }
+  ],
+  "csv": "results/tables/desi_dr2_bbn_cmb_absolute_gw0100_bestfit_horndeski.csv"
+}

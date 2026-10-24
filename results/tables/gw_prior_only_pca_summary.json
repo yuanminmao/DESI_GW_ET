@@ -1,0 +1,96 @@
+{
+  "probe_combination": "absolute ET GW distances + modified Horndeski correlation prior only",
+  "explicitly_excluded": [
+    "DESI",
+    "CMB",
+    "BBN",
+    "omega_b"
+  ],
+  "neff_formula": "29 - Tr(P_Horndeski C_w,A=1)",
+  "data_fisher_formula": "inv(C_w,A=0.01) - 0.01 P_Horndeski",
+  "mode_order": "descending eigenvalues of the prior-subtracted data Fisher",
+  "mode_sign": "largest-absolute component is positive",
+  "prior_spectrum": "28 non-constant prior eigenvalues in ascending order",
+  "spectrum_display_floor": 1e-07,
+  "cases": [
+    {
+      "n_gw": 100,
+      "N_eff_A1": 3.8276227915818666,
+      "trace_prior_precision_times_Cw_A1": 25.172377208418133,
+      "snr_mean_vs_w_minus_one_A1": 1.2043849816329077,
+      "first_four_data_fisher_eigenvalues": [
+        0.13605939219182547,
+        0.12283309112653924,
+        0.11549732465111073,
+        0.10838932049315508
+      ],
+      "data_fisher_nonpositive_count": 0,
+      "data_fisher_minimum_raw_eigenvalue": 0.02587209371828676,
+      "weak_posterior_covariance_condition_number": 16.50167661906627,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317",
+      "source_A1_summary": "results/tables/gw0100_prior_wz_mcmc_summary.json",
+      "source_A001_summary": "results/tables/gw0100_prior_A001_wz_mcmc_summary.json"
+    },
+    {
+      "n_gw": 500,
+      "N_eff_A1": 4.3183444182604305,
+      "trace_prior_precision_times_Cw_A1": 24.68165558173957,
+      "snr_mean_vs_w_minus_one_A1": 1.9456586243582135,
+      "first_four_data_fisher_eigenvalues": [
+        0.9959215900712046,
+        0.21050183531182612,
+        0.14309960736995128,
+        0.12081005783302291
+      ],
+      "data_fisher_nonpositive_count": 0,
+      "data_fisher_minimum_raw_eigenvalue": 0.01122136639732788,
+      "weak_posterior_covariance_condition_number": 14.716692425315726,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424",
+      "source_A1_summary": "results/tables/gw0500_prior_wz_mcmc_summary.json",
+      "source_A001_summary": "results/tables/gw0500_prior_A001_wz_mcmc_summary.json"
+    },
+    {
+      "n_gw": 1000,
+      "N_eff_A1": 4.365469954147958,
+      "trace_prior_precision_times_Cw_A1": 24.634530045852042,
+      "snr_mean_vs_w_minus_one_A1": 3.6240900257106716,
+      "first_four_data_fisher_eigenvalues": [
+        2.604173003714037,
+        0.31546727005840564,
+        0.1584094436997954,
+        0.12116108195775062
+      ],
+      "data_fisher_nonpositive_count": 1,
+      "data_fisher_minimum_raw_eigenvalue": -0.001693407831299036,
+      "weak_posterior_covariance_condition_number": 40.498933196930444,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126",
+      "source_A1_summary": "results/tables/gw1000_prior_wz_mcmc_summary.json",
+      "source_A001_summary": "results/tables/gw1000_prior_A001_wz_mcmc_summary.json"
+    },
+    {
+      "n_gw": 3000,
+      "N_eff_A1": 5.19070623389802,
+      "trace_prior_precision_times_Cw_A1": 23.80929376610198,
+      "snr_mean_vs_w_minus_one_A1": 7.649297926969572,
+      "first_four_data_fisher_eigenvalues": [
+        11.42931196671836,
+        1.6104042398076055,
+        0.6540876500543433,
+        0.27008189724368303
+      ],
+      "data_fisher_nonpositive_count": 1,
+      "data_fisher_minimum_raw_eigenvalue": -0.011385502926407005,
+      "weak_posterior_covariance_condition_number": 169.70649954404487,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f",
+      "source_A1_summary": "results/tables/gw3000_prior_wz_mcmc_summary.json",
+      "source_A001_summary": "results/tables/gw3000_prior_A001_wz_mcmc_summary.json"
+    }
+  ],
+  "outputs": {
+    "neff_csv": "results/tables/gw_prior_only_neff.csv",
+    "modes_csv": "results/tables/gw_prior_only_pca_modes_pc1-4.csv",
+    "spectrum_csv": "results/tables/gw_prior_only_pca_spectrum.csv",
+    "modes_figure": "results/figures/gw_prior_only_wz_pca_modes_pc1-4_gw0100_0500_1000_3000_preview.png",
+    "spectrum_figure": "results/figures/gw_prior_only_pca_spectrum.png"
+  }
+}

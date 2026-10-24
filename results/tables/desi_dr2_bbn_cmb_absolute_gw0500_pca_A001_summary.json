@@ -1,0 +1,233 @@
+{
+  "n_gw": 500,
+  "catalog": "results/catalogs/N0500/realization_0042.txt",
+  "method": "Gu et al. Fig. 4 weak-correlation-prior posterior",
+  "prior_amplitude": 0.01,
+  "prior_precision": "(I-S)^T C_Pi^-1 (I-S), five-neighbour local mean",
+  "sampling_coordinates": "constant-Jacobian linear whitening; covariance and Rhat transformed back to H0, Omega_m, omega_b, w1..w29",
+  "n_independent_chains": 8,
+  "total_retained_weighted_draws": 6496198,
+  "chain_weighted_draws_before_second_half": [
+    1627115,
+    1589946,
+    1645240,
+    1632736,
+    1590607,
+    1636815,
+    1636956,
+    1632978
+  ],
+  "rank_folded_split_rhat": {
+    "common_retained_draws_per_chain": 794973,
+    "max_rhat_minus_one": 0.0077688971639624516,
+    "all_pass": true,
+    "per_parameter": {
+      "H0": {
+        "rank_rhat": 1.0074730688605646,
+        "folded_rhat": 1.0058783906802988,
+        "max_rhat": 1.0074730688605646
+      },
+      "Omega_m": {
+        "rank_rhat": 1.0077688971639625,
+        "folded_rhat": 1.0062184930972593,
+        "max_rhat": 1.0077688971639625
+      },
+      "omega_b": {
+        "rank_rhat": 1.0022009771694462,
+        "folded_rhat": 1.0005825260150212,
+        "max_rhat": 1.0022009771694462
+      },
+      "w1": {
+        "rank_rhat": 1.005160631101132,
+        "folded_rhat": 1.0012589750091543,
+        "max_rhat": 1.005160631101132
+      },
+      "w2": {
+        "rank_rhat": 1.004712893377904,
+        "folded_rhat": 1.0028116901367912,
+        "max_rhat": 1.004712893377904
+      },
+      "w3": {
+        "rank_rhat": 1.0044988819162965,
+        "folded_rhat": 1.0037250291289341,
+        "max_rhat": 1.0044988819162965
+      },
+      "w4": {
+        "rank_rhat": 1.002547709658406,
+        "folded_rhat": 1.0023676598428852,
+        "max_rhat": 1.002547709658406
+      },
+      "w5": {
+        "rank_rhat": 1.0025975066812098,
+        "folded_rhat": 1.0009096339560244,
+        "max_rhat": 1.0025975066812098
+      },
+      "w6": {
+        "rank_rhat": 1.0015142884231958,
+        "folded_rhat": 1.0004190444744863,
+        "max_rhat": 1.0015142884231958
+      },
+      "w7": {
+        "rank_rhat": 1.0026958689685213,
+        "folded_rhat": 1.0008183382719755,
+        "max_rhat": 1.0026958689685213
+      },
+      "w8": {
+        "rank_rhat": 1.003358939430804,
+        "folded_rhat": 1.0011372023194758,
+        "max_rhat": 1.003358939430804
+      },
+      "w9": {
+        "rank_rhat": 1.0028464595714346,
+        "folded_rhat": 1.0022023076363615,
+        "max_rhat": 1.0028464595714346
+      },
+      "w10": {
+        "rank_rhat": 1.0027024011751606,
+        "folded_rhat": 1.0009930538356793,
+        "max_rhat": 1.0027024011751606
+      },
+      "w11": {
+        "rank_rhat": 1.0021356679623883,
+        "folded_rhat": 1.000382827390709,
+        "max_rhat": 1.0021356679623883
+      },
+      "w12": {
+        "rank_rhat": 1.0028694338746083,
+        "folded_rhat": 1.000882027019501,
+        "max_rhat": 1.0028694338746083
+      },
+      "w13": {
+        "rank_rhat": 1.0012702911639646,
+        "folded_rhat": 1.0005623278894467,
+        "max_rhat": 1.0012702911639646
+      },
+      "w14": {
+        "rank_rhat": 1.001341928627006,
+        "folded_rhat": 1.0009135149050226,
+        "max_rhat": 1.001341928627006
+      },
+      "w15": {
+        "rank_rhat": 1.001210586933072,
+        "folded_rhat": 1.0005725771216494,
+        "max_rhat": 1.001210586933072
+      },
+      "w16": {
+        "rank_rhat": 1.0020051776508208,
+        "folded_rhat": 1.0007745365702143,
+        "max_rhat": 1.0020051776508208
+      },
+      "w17": {
+        "rank_rhat": 1.0022527272933541,
+        "folded_rhat": 1.000652508250436,
+        "max_rhat": 1.0022527272933541
+      },
+      "w18": {
+        "rank_rhat": 1.0017774090999112,
+        "folded_rhat": 1.0007457838091374,
+        "max_rhat": 1.0017774090999112
+      },
+      "w19": {
+        "rank_rhat": 1.0022612795411545,
+        "folded_rhat": 1.0009875883145556,
+        "max_rhat": 1.0022612795411545
+      },
+      "w20": {
+        "rank_rhat": 1.0015444080752938,
+        "folded_rhat": 1.0006400657254357,
+        "max_rhat": 1.0015444080752938
+      },
+      "w21": {
+        "rank_rhat": 1.00166135176608,
+        "folded_rhat": 1.0012671491550302,
+        "max_rhat": 1.00166135176608
+      },
+      "w22": {
+        "rank_rhat": 1.0013808576396477,
+        "folded_rhat": 1.000599353160229,
+        "max_rhat": 1.0013808576396477
+      },
+      "w23": {
+        "rank_rhat": 1.0017059667962585,
+        "folded_rhat": 1.0007255806858768,
+        "max_rhat": 1.0017059667962585
+      },
+      "w24": {
+        "rank_rhat": 1.003672436410048,
+        "folded_rhat": 1.0010267143786886,
+        "max_rhat": 1.003672436410048
+      },
+      "w25": {
+        "rank_rhat": 1.0047562724823358,
+        "folded_rhat": 1.0013238718800965,
+        "max_rhat": 1.0047562724823358
+      },
+      "w26": {
+        "rank_rhat": 1.0013621656261609,
+        "folded_rhat": 1.0007913496348628,
+        "max_rhat": 1.0013621656261609
+      },
+      "w27": {
+        "rank_rhat": 1.002031366222868,
+        "folded_rhat": 1.0014334879452325,
+        "max_rhat": 1.002031366222868
+      },
+      "w28": {
+        "rank_rhat": 1.001936811258581,
+        "folded_rhat": 1.0013331016324827,
+        "max_rhat": 1.001936811258581
+      },
+      "w29": {
+        "rank_rhat": 1.002576948283242,
+        "folded_rhat": 1.0012256191217024,
+        "max_rhat": 1.002576948283242
+      }
+    }
+  },
+  "joint_posterior_mean": {
+    "H0": 60.58852079848446,
+    "Omega_m": 0.39814830843301796,
+    "omega_b": 0.021563469366890305,
+    "w1": -0.9675549791217078,
+    "w2": -0.6304526392636666,
+    "w3": -0.24402728047186495,
+    "w4": 0.2720303988299438,
+    "w5": 0.6909968617853547,
+    "w6": 0.7726987142314038,
+    "w7": 0.26586024848546747,
+    "w8": -0.6152335410304149,
+    "w9": -1.4563391708683486,
+    "w10": -2.142842263642956,
+    "w11": -1.9725672552216307,
+    "w12": -1.1624790369862958,
+    "w13": -0.2978291228406561,
+    "w14": 0.10829276270389963,
+    "w15": -0.023153102566528094,
+    "w16": -0.929630932964006,
+    "w17": -1.708514191162338,
+    "w18": -1.6695783047690078,
+    "w19": -1.875605808844462,
+    "w20": -1.5981181608434227,
+    "w21": -1.2361922091193245,
+    "w22": -1.0907790320893622,
+    "w23": -1.2386015235532797,
+    "w24": -1.559501514970925,
+    "w25": -1.697157197778089,
+    "w26": -1.6361003157146696,
+    "w27": -1.3220675264646609,
+    "w28": -1.0677120846184582,
+    "w29": -0.8725450476045192
+  },
+  "w_covariance": "results/tables/desi_dr2_bbn_cmb_absolute_gw0500_pca_A001_wz_covariance.txt",
+  "chains": [
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.1.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.2.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.3.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.4.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.5.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.6.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.7.txt",
+    "results/chains/COBAYA_DESI_DR2_BBN_CMB_ABSOLUTE_GW_PCA_A001_PRODUCTION/GW0500/chain.8.txt"
+  ],
+  "early_background": "data/early_background_table.npz"
+}

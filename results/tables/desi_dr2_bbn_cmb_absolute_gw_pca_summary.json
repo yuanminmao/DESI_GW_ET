@@ -1,0 +1,88 @@
+{
+  "method": "Supplied Figure 4 source: F_data = inv(C_p(A=0.01)) - 0.01*Ctilde_Pi^-1; data and prior diagonalized separately",
+  "fisher_subtraction_precision": "Ctilde_Pi^-1 = (I-S)^T C_Pi^-1 (I-S), matching INV_D_w_horn_prior.txt",
+  "modified_prior_precision": "Ctilde_Pi^-1 = (I-S)^T C_Pi^-1 (I-S), S is the five-neighbour local mean",
+  "data_fisher_source": "converged A=0.01 Cobaya chains",
+  "posterior_amplitude_source": "converged A=1 Cobaya chains",
+  "spectrum_definition": "descending eigenvalues of weak-prior-subtracted F_data and ascending nonzero eigenvalues of the separately diagonalized prior precision",
+  "log_plot_rule": "retain raw eigenvalues in tables; display non-positive F_data tail modes at the plotting floor 1.2e-07",
+  "neff_formula": "29 - trace(P_prior @ C_post_A1)",
+  "cases": [
+    {
+      "n_gw": 100,
+      "neff_A1": 5.362546979504806,
+      "trace_prior_precision_times_Cw": 23.637453020495194,
+      "posterior_gaussian_distance_from_w_minus_1": 2.635248643743661,
+      "max_rank_folded_split_rhat_A1": 1.0015601605612796,
+      "max_rank_folded_split_rhat_A001": 1.0081267599910193,
+      "data_fisher_first_five": [
+        23.22920687381744,
+        4.453622250848274,
+        1.7595361142628048,
+        1.1473587973801016,
+        0.28229499707181016
+      ],
+      "data_fisher_nonpositive_count": 4,
+      "data_fisher_minimum_raw_eigenvalue": -0.026274198390989083,
+      "source_A1_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw0100_wz_summary.json",
+      "source_A001_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw0100_pca_A001_summary.json"
+    },
+    {
+      "n_gw": 500,
+      "neff_A1": 5.599057219945799,
+      "trace_prior_precision_times_Cw": 23.4009427800542,
+      "posterior_gaussian_distance_from_w_minus_1": 4.666821025917147,
+      "max_rank_folded_split_rhat_A1": 1.0047905025257065,
+      "max_rank_folded_split_rhat_A001": 1.0077688971639625,
+      "data_fisher_first_five": [
+        30.497001673685368,
+        5.22642931945919,
+        2.040401539366283,
+        1.2009370221785463,
+        1.1782078342021653
+      ],
+      "data_fisher_nonpositive_count": 4,
+      "data_fisher_minimum_raw_eigenvalue": -0.03276953809550497,
+      "source_A1_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw0500_wz_summary.json",
+      "source_A001_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw0500_pca_A001_summary.json"
+    },
+    {
+      "n_gw": 1000,
+      "neff_A1": 5.888063354329958,
+      "trace_prior_precision_times_Cw": 23.111936645670042,
+      "posterior_gaussian_distance_from_w_minus_1": 8.272379841701992,
+      "max_rank_folded_split_rhat_A1": 1.0015315413011103,
+      "max_rank_folded_split_rhat_A001": 1.0075347846878435,
+      "data_fisher_first_five": [
+        42.79826275564227,
+        8.05141095513455,
+        3.37758812410742,
+        1.7603333920580377,
+        1.178695837465701
+      ],
+      "data_fisher_nonpositive_count": 4,
+      "data_fisher_minimum_raw_eigenvalue": -0.019255827084409816,
+      "source_A1_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw1000_wz_summary.json",
+      "source_A001_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw1000_pca_A001_summary.json"
+    },
+    {
+      "n_gw": 3000,
+      "neff_A1": 6.274380240023046,
+      "trace_prior_precision_times_Cw": 22.725619759976954,
+      "posterior_gaussian_distance_from_w_minus_1": 11.791708463988531,
+      "max_rank_folded_split_rhat_A1": 1.0012133225843352,
+      "max_rank_folded_split_rhat_A001": 1.0094855320724676,
+      "data_fisher_first_five": [
+        69.99584255032977,
+        12.058513012270733,
+        4.287643589314145,
+        1.9596001975737034,
+        1.1803969657024915
+      ],
+      "data_fisher_nonpositive_count": 5,
+      "data_fisher_minimum_raw_eigenvalue": -0.0409846271070045,
+      "source_A1_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw3000_wz_summary.json",
+      "source_A001_chain_summary": "results/tables/desi_dr2_bbn_cmb_absolute_gw3000_pca_A001_summary.json"
+    }
+  ]
+}
