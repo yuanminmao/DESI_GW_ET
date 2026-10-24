@@ -398,7 +398,7 @@ def write_nested_catalogs(
     if (max_n - base_n) % step:
         raise ValueError("max_n - base_n must be divisible by step")
 
-    from mcmc.gw_evidence import load_gw_catalog
+    from mcmc.gw_cpl_mcmc import load_gw_catalog
 
     root = Path(root).expanduser().resolve()
     base_path = catalog_path(root, base_n, seed)

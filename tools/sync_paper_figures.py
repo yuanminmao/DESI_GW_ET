@@ -14,9 +14,9 @@ FIGURES = (
     "wz_posterior_and_cov.png",
     "sensitivity_curves.png",
     "mock_GW_catalog_ET_by_4.png",
-    "wz_posterior_cov_gw_only_vs_desi_bbn_cmb_gw0100_0500_1000_3000_with_injected_w.png",
-    "gw_prior_only_and_desi_dr2_bbn_cmb_absolute_gw_pca_spectrum_side_by_side.png",
-    "wz_pca_modes_pc1-4_gw_only_vs_desi_bbn_cmb_gw0100_0500_1000_3000.png",
+    "wz_posterior_cov_gw_vs_desi_bbn_cmb_gw0100_0500_1000_3000_with_injected_w.png",
+    "gw_and_desi_bbn_cmb_gw_pca_spectrum.png",
+    "wz_pca_modes_pc1-4_gw_vs_desi_bbn_cmb_gw0100_0500_1000_3000.png",
     "gw_w0_wa_4.png",
 )
 

@@ -31,4 +31,4 @@ inference = [
 py-modules = ["paths"]
 
 [tool.setuptools.packages.find]
-include = ["catalog*", "cosmology*", "mcmc*", "plot*"]
+include = ["catalog*", "cosmology*", "mcmc*", "plot*", "analysis*"]

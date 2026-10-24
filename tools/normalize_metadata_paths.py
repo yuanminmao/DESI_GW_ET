@@ -17,6 +17,7 @@ REPOSITORY_MARKERS = (
     "/catalog/",
     "/cosmology/",
     "/mcmc/",
+    "/analysis/",
     "/plot/",
     "/paper/",
 )
@@ -72,10 +73,10 @@ def rewrite_csv(path: Path) -> bool:
 
 def main() -> None:
     changed: list[Path] = []
-    for path in sorted(TABLES.glob("*.json")):
+    for path in sorted(TABLES.rglob("*.json")):
         if rewrite_json(path):
             changed.append(path)
-    for path in sorted(TABLES.glob("*.csv")):
+    for path in sorted(TABLES.rglob("*.csv")):
         if rewrite_csv(path):
             changed.append(path)
     print(f"Normalized {len(changed)} metadata files.")

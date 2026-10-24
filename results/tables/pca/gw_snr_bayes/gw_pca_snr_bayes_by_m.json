@@ -1,0 +1,345 @@
+{
+  "description": "GW-only SNR and analytic Gaussian Bayes factor for the first m data-defined PCA modes",
+  "data_combination": "absolute ET GW + Horndeski correlation prior",
+  "reference_model": "flat LCDM, w_i=-1",
+  "mode_basis": "descending eigenvectors of F_data=inv(C_A001)-0.01 P_Horndeski",
+  "method": {
+    "posterior_precision_m": "Q_m=E_m^T(F_data+P_Horndeski)E_m",
+    "score_m": "j_m=E_m^T inv(C_A001) <w+1>_A001",
+    "posterior_mean_m": "mu_m=inv(Q_m)j_m",
+    "snr": "sqrt(mu_m^T Q_m mu_m)",
+    "delta_ln_L": "SNR_m^2/2",
+    "delta_ln_V": "[ln det(P_m)-ln det(Q_m)]/2",
+    "ln_bayes_factor": "delta_ln_L+delta_ln_V"
+  },
+  "sign_convention": "positive ln_B_m_over_LCDM favors the m-mode w(z) model",
+  "approximation": "Analytic Gaussian evidence compressed from converged GW-only A=0.01 MCMC chains",
+  "source_files": {
+    "100": [
+      "results/tables/pca/gw_pca_001/gw0100_prior_A001_wz_mcmc_summary.json",
+      "results/tables/pca/gw_pca_001/gw0100_prior_A001_wz_mcmc_covariance.csv"
+    ],
+    "500": [
+      "results/tables/pca/gw_pca_001/gw0500_prior_A001_wz_mcmc_summary.json",
+      "results/tables/pca/gw_pca_001/gw0500_prior_A001_wz_mcmc_covariance.csv"
+    ],
+    "1000": [
+      "results/tables/pca/gw_pca_001/gw1000_prior_A001_wz_mcmc_summary.json",
+      "results/tables/pca/gw_pca_001/gw1000_prior_A001_wz_mcmc_covariance.csv"
+    ],
+    "3000": [
+      "results/tables/pca/gw_pca_001/gw3000_prior_A001_wz_mcmc_summary.json",
+      "results/tables/pca/gw_pca_001/gw3000_prior_A001_wz_mcmc_covariance.csv"
+    ]
+  },
+  "results": [
+    {
+      "n_gw": 100,
+      "m": 1,
+      "SNR_m": 0.057681500519970834,
+      "delta_ln_L": 0.0016635777511176976,
+      "delta_ln_V": -0.004575325359305937,
+      "ln_B_m_over_LCDM": -0.0029117476081882395,
+      "B_m_over_LCDM": 0.9970924874174395,
+      "lambda_data_m": 0.13605939219182547,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 2,
+      "SNR_m": 0.10260723858277972,
+      "delta_ln_L": 0.005264122704791739,
+      "delta_ln_V": -0.012732577941122702,
+      "ln_B_m_over_LCDM": -0.007468455236330963,
+      "B_m_over_LCDM": 0.9925593643758863,
+      "lambda_data_m": 0.12283309112653926,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 3,
+      "SNR_m": 0.10846707818809574,
+      "delta_ln_L": 0.005882553525331237,
+      "delta_ln_V": -0.01498240814048124,
+      "ln_B_m_over_LCDM": -0.009099854615150003,
+      "B_m_over_LCDM": 0.9909414237579028,
+      "lambda_data_m": 0.11549732465111072,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 4,
+      "SNR_m": 0.17192733626724585,
+      "delta_ln_L": 0.014779504477975316,
+      "delta_ln_V": -0.035093691506804525,
+      "ln_B_m_over_LCDM": -0.020314187028829207,
+      "B_m_over_LCDM": 0.9798907559722759,
+      "lambda_data_m": 0.10838932049315508,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 5,
+      "SNR_m": 0.17285954786174074,
+      "delta_ln_L": 0.014940211643482717,
+      "delta_ln_V": -0.03689203319361489,
+      "ln_B_m_over_LCDM": -0.021951821550132176,
+      "B_m_over_LCDM": 0.9782873662846789,
+      "lambda_data_m": 0.10610420233704233,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 6,
+      "SNR_m": 0.19060121464513957,
+      "delta_ln_L": 0.018164411512101283,
+      "delta_ln_V": -0.04429443999165095,
+      "ln_B_m_over_LCDM": -0.026130028479549663,
+      "B_m_over_LCDM": 0.9742084065348579,
+      "lambda_data_m": 0.1002799115188439,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 100,
+      "m": 7,
+      "SNR_m": 0.19322423939018385,
+      "delta_ln_L": 0.01866780334395754,
+      "delta_ln_V": -0.04643926259990927,
+      "ln_B_m_over_LCDM": -0.02777145925595173,
+      "B_m_over_LCDM": 0.9726106225583802,
+      "lambda_data_m": 0.09277798305571386,
+      "catalog_sha256": "a9105f742df98ef6cf8d9fd75ab233eb395fdf76b829226d237a0f0ec7936317"
+    },
+    {
+      "n_gw": 500,
+      "m": 1,
+      "SNR_m": 1.3644998824674963,
+      "delta_ln_L": 0.9309299646269056,
+      "delta_ln_V": -1.1886776554896006,
+      "ln_B_m_over_LCDM": -0.257747690862695,
+      "B_m_over_LCDM": 0.7727901895371632,
+      "lambda_data_m": 0.9959215900712042,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 2,
+      "SNR_m": 1.399109624802797,
+      "delta_ln_L": 0.9787538711079118,
+      "delta_ln_V": -1.325001307819495,
+      "ln_B_m_over_LCDM": -0.3462474367115833,
+      "B_m_over_LCDM": 0.7073374442002016,
+      "lambda_data_m": 0.21050183531182606,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 3,
+      "SNR_m": 1.4422488808565765,
+      "delta_ln_L": 1.0400409171660239,
+      "delta_ln_V": -1.4378816041787084,
+      "ln_B_m_over_LCDM": -0.3978406870126845,
+      "B_m_over_LCDM": 0.6717690406701576,
+      "lambda_data_m": 0.14309960736995134,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 4,
+      "SNR_m": 1.4443838570438703,
+      "delta_ln_L": 1.0431223632444637,
+      "delta_ln_V": -1.4777312232469373,
+      "ln_B_m_over_LCDM": -0.43460886000247356,
+      "B_m_over_LCDM": 0.6475178876974423,
+      "lambda_data_m": 0.1208100578330229,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 5,
+      "SNR_m": 1.4443859007522664,
+      "delta_ln_L": 1.0431253151459678,
+      "delta_ln_V": -1.480766993104377,
+      "ln_B_m_over_LCDM": -0.43764167795840914,
+      "B_m_over_LCDM": 0.6455570587424483,
+      "lambda_data_m": 0.11130963487747197,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 6,
+      "SNR_m": 1.4926802158748054,
+      "delta_ln_L": 1.1140471134320278,
+      "delta_ln_V": -1.564490941626386,
+      "ln_B_m_over_LCDM": -0.45044382819435813,
+      "B_m_over_LCDM": 0.6373452170623789,
+      "lambda_data_m": 0.10722439348633898,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 500,
+      "m": 7,
+      "SNR_m": 1.5096557188197532,
+      "delta_ln_L": 1.1395301946825929,
+      "delta_ln_V": -1.6273429343735497,
+      "ln_B_m_over_LCDM": -0.48781273969095684,
+      "B_m_over_LCDM": 0.6139678340850143,
+      "lambda_data_m": 0.10385340282326955,
+      "catalog_sha256": "ac3850811c4ab1ef868f07f9b66afdae405f4ec0af328d5582c209cbd4d82424"
+    },
+    {
+      "n_gw": 1000,
+      "m": 1,
+      "SNR_m": 3.194072422523871,
+      "delta_ln_L": 5.101049320163754,
+      "delta_ln_V": -1.2419376850252641,
+      "ln_B_m_over_LCDM": 3.8591116351384898,
+      "B_m_over_LCDM": 47.42320354265399,
+      "lambda_data_m": 2.6041730037140356,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 2,
+      "SNR_m": 3.2085579039545182,
+      "delta_ln_L": 5.147421911514505,
+      "delta_ln_V": -1.5975536713378016,
+      "ln_B_m_over_LCDM": 3.5498682401767034,
+      "B_m_over_LCDM": 34.80873079321914,
+      "lambda_data_m": 0.31546727005840575,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 3,
+      "SNR_m": 3.278660935355049,
+      "delta_ln_L": 5.374808764511622,
+      "delta_ln_V": -1.6740379661038387,
+      "ln_B_m_over_LCDM": 3.700770798407783,
+      "B_m_over_LCDM": 40.47849309643723,
+      "lambda_data_m": 0.15840944369979537,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 4,
+      "SNR_m": 3.29586755943383,
+      "delta_ln_L": 5.4313714846641545,
+      "delta_ln_V": -1.7190981224176338,
+      "ln_B_m_over_LCDM": 3.7122733622465205,
+      "B_m_over_LCDM": 40.94678767824959,
+      "lambda_data_m": 0.12116108195775062,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 5,
+      "SNR_m": 3.2982791650263232,
+      "delta_ln_L": 5.43932272522337,
+      "delta_ln_V": -1.815472639421285,
+      "ln_B_m_over_LCDM": 3.623850085802085,
+      "B_m_over_LCDM": 37.481597747680745,
+      "lambda_data_m": 0.11830010536443558,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 6,
+      "SNR_m": 3.2983041365880252,
+      "delta_ln_L": 5.43940508871684,
+      "delta_ln_V": -1.8180975845114116,
+      "ln_B_m_over_LCDM": 3.6213075042054284,
+      "B_m_over_LCDM": 37.386418778457426,
+      "lambda_data_m": 0.11543419518369082,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 1000,
+      "m": 7,
+      "SNR_m": 3.2991031359853484,
+      "delta_ln_L": 5.44204075093418,
+      "delta_ln_V": -1.8788368962727517,
+      "ln_B_m_over_LCDM": 3.5632038546614284,
+      "B_m_over_LCDM": 35.27603558064363,
+      "lambda_data_m": 0.10574030047565536,
+      "catalog_sha256": "9244c34b99faf2d3d7a2903e71eb40236b2f4cab1c4e8c81a356d9dc04947126"
+    },
+    {
+      "n_gw": 3000,
+      "m": 1,
+      "SNR_m": 6.843991745531525,
+      "delta_ln_L": 23.420111506451825,
+      "delta_ln_V": -2.0340685861297105,
+      "ln_B_m_over_LCDM": 21.386042920322115,
+      "B_m_over_LCDM": 1940172881.6855617,
+      "lambda_data_m": 11.429311966718362,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 2,
+      "SNR_m": 7.0731405139124295,
+      "delta_ln_L": 25.014658364774697,
+      "delta_ln_V": -3.569266712209979,
+      "ln_B_m_over_LCDM": 21.445391652564716,
+      "B_m_over_LCDM": 2058805202.2273815,
+      "lambda_data_m": 1.6104042398076055,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 3,
+      "SNR_m": 7.1090253458729755,
+      "delta_ln_L": 25.269120684132186,
+      "delta_ln_V": -4.304500076666257,
+      "ln_B_m_over_LCDM": 20.96462060746593,
+      "B_m_over_LCDM": 1272972568.3475914,
+      "lambda_data_m": 0.654087650054343,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 4,
+      "SNR_m": 7.128920908220479,
+      "delta_ln_L": 25.41075665783155,
+      "delta_ln_V": -4.609974457971489,
+      "ln_B_m_over_LCDM": 20.80078219986006,
+      "B_m_over_LCDM": 1080599914.07698,
+      "lambda_data_m": 0.2700818972436828,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 5,
+      "SNR_m": 7.160959245500738,
+      "delta_ln_L": 25.63966865786125,
+      "delta_ln_V": -4.692276779518745,
+      "ln_B_m_over_LCDM": 20.947391878342504,
+      "B_m_over_LCDM": 1251228716.1042085,
+      "lambda_data_m": 0.1810654454999655,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 6,
+      "SNR_m": 7.166792647802903,
+      "delta_ln_L": 25.681458428300875,
+      "delta_ln_V": -4.787129471187763,
+      "ln_B_m_over_LCDM": 20.89432895711311,
+      "B_m_over_LCDM": 1186565642.8792086,
+      "lambda_data_m": 0.14014453342576588,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    },
+    {
+      "n_gw": 3000,
+      "m": 7,
+      "SNR_m": 7.169738494039526,
+      "delta_ln_L": 25.70257503645609,
+      "delta_ln_V": -4.828133242607949,
+      "ln_B_m_over_LCDM": 20.874441793848142,
+      "B_m_over_LCDM": 1163201313.3752272,
+      "lambda_data_m": 0.12079091182277858,
+      "catalog_sha256": "4ec610eef0cc3f021f98aacba3648791012f912b573ece7dceae3d1744e6a96f"
+    }
+  ]
+}

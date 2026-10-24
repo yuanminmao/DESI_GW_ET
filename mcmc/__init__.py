@@ -1,1 +1,1 @@
-"""Inference, reconstruction, and statistical-analysis scripts."""
+"""MCMC models, samplers, and posterior-reconstruction scripts."""

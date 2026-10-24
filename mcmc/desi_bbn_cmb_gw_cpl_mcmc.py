@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """CPL MCMC for the joint DESI DR2 + BBN + CMB + ET-GW likelihood.
 
-This is the joint-data counterpart of ``mcmc/gw_mcmc.py``.  For each ET
+This is the joint-data counterpart of ``mcmc/gw_cpl_mcmc.py``.  For each ET
 catalogue it samples
 
     (H0, Omega_m, omega_b, w0, wa)
@@ -13,7 +13,7 @@ same H0, Omega_m, w0 and wa are used by every likelihood term.
 Run the four catalogue sizes and then make the comparison figure with::
 
     python3 mcmc/desi_bbn_cmb_gw_cpl_mcmc.py
-    python3 plot/plot_gw_w0_wa_4.py --no-show
+    python3 plot/plot_gw_w0_wa_4.py
 
 Useful shorter runs::
 
@@ -27,6 +27,7 @@ The quick mode is only a pipeline check; use the default chains for science.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import shutil
 import sys
@@ -45,6 +46,7 @@ warnings.filterwarnings(
 import camb
 import numpy as np
 from scipy.integrate import cumulative_trapezoid
+from scipy.interpolate import RegularGridInterpolator
 from scipy.linalg import cho_solve
 from scipy.optimize import minimize
 
@@ -52,11 +54,15 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paths import chain_root, setup_sys_path
+from paths import (
+    DESI_BBN_CMB_GW_CPL_MCMC_TABLES,
+    joint_cpl_chain_root,
+    setup_sys_path,
+)
 
 setup_sys_path()
 
-from bbn_cmb_desi_absolute_gw_wz_model import (
+from mcmc.reconstruct_wz_desi_bbn_cmb_gw import (
     BBN_MEAN,
     BBN_SIGMA,
     C_KM_S,
@@ -64,15 +70,142 @@ from bbn_cmb_desi_absolute_gw_wz_model import (
     CMB_THETA100_SIGMA,
     OMEGA_NU_H2,
     Observations,
+    camb_lcdm_background,
     load_observations,
 )
-from early_background_table import TableEarlyBackground
 from gw_cosmology import de_integral_cpl
-from gw_mcmc import (
+from mcmc.gw_cpl_mcmc import (
     gelman_rubin_rminus1,
     run_cobaya_chain,
     write_cosmomc_chains,
 )
+
+TABLE_FILE = ROOT / "data/early_background_table.npz"
+GRID_SIZE = 3200
+
+
+def make_table(out: Path = TABLE_FILE) -> Path:
+    u_grid = np.linspace(0.0, np.log1p(1200.0), GRID_SIZE)
+    z_grid = np.expm1(u_grid)
+    reference_h0, reference_omega_m, reference_omega_b = 67.4, 0.31, 0.022
+    ref = camb_lcdm_background(reference_h0, reference_omega_m,
+                               reference_omega_b, z_grid)
+    radiation_h2 = reference_h0**2 * (1.0 - reference_omega_m - ref[4])
+    matter_h2_grid = np.linspace(0.06, 0.50, 89)
+    baryon_h2_grid = np.linspace(0.015, 0.030, 25)
+    sound = np.empty((len(matter_h2_grid), len(baryon_h2_grid), 3))
+    training_h0 = 80.0
+    for i, matter_h2 in enumerate(matter_h2_grid):
+        for j, baryon_h2 in enumerate(baryon_h2_grid):
+            omega_m = matter_h2 / (training_h0 / 100.0)**2
+            sound[i, j] = camb_lcdm_background(
+                training_h0, omega_m, baryon_h2, z_grid,
+            )[1:4]
+    out.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        out, u_grid=u_grid, z_grid=z_grid, reference_h0=reference_h0,
+        reference_omega_m=reference_omega_m, reference_hubble_squared=ref[-1]**2,
+        radiation_h2=radiation_h2, matter_h2_grid=matter_h2_grid,
+        baryon_h2_grid=baryon_h2_grid, sound=sound,
+    )
+    return out
+
+
+class TableEarlyBackground:
+    def __init__(self, path: Path = TABLE_FILE) -> None:
+        if not path.is_file():
+            raise FileNotFoundError(
+                f"Build CAMB table first: python3 {__file__} --build-background-table"
+            )
+        with np.load(path) as data:
+            self.u_grid = data["u_grid"]
+            self.z_grid = data["z_grid"]
+            self.reference_h0 = float(data["reference_h0"])
+            self.reference_omega_m = float(data["reference_omega_m"])
+            self.reference_hubble_squared = data["reference_hubble_squared"]
+            self.radiation_h2 = float(data["radiation_h2"])
+            self.matter_h2_grid = data["matter_h2_grid"]
+            self.baryon_h2_grid = data["baryon_h2_grid"]
+            sound = data["sound"]
+        self.interpolators = [
+            RegularGridInterpolator((self.matter_h2_grid, self.baryon_h2_grid),
+                                    sound[:, :, k], method="cubic", bounds_error=False,
+                                    fill_value=None)
+            for k in range(3)
+        ]
+        self.n_camb_fallbacks = 0
+
+    def evaluate(self, h0: float, omega_m: float, omega_b: float,
+                 z_grid: np.ndarray) -> tuple[float, float, float, float, float, np.ndarray]:
+        if z_grid.shape != self.z_grid.shape or not np.allclose(z_grid, self.z_grid, rtol=0, atol=1e-12):
+            raise ValueError("CAMB table requires the original 3200-node redshift grid")
+        matter_h2 = omega_m * (h0 / 100.0)**2
+        if not (self.matter_h2_grid[0] <= matter_h2 <= self.matter_h2_grid[-1]
+                and self.baryon_h2_grid[0] <= omega_b <= self.baryon_h2_grid[-1]):
+            self.n_camb_fallbacks += 1
+            return camb_lcdm_background(h0, omega_m, omega_b, z_grid)
+        point = np.array([matter_h2, omega_b])
+        rstar, rd, zstar = (interpolator(point).item() for interpolator in self.interpolators)
+        h2 = (self.reference_hubble_squared
+              + (h0**2 - self.reference_h0**2)
+              + (h0**2 * omega_m - self.reference_h0**2 * self.reference_omega_m)
+              * ((1.0 + z_grid)**3 - 1.0))
+        hubble_grid = np.sqrt(h2)
+        omega_de = 1.0 - omega_m - self.radiation_h2 / h0**2
+        dm_grid = C_KM_S * cumulative_trapezoid(
+            np.exp(self.u_grid) / hubble_grid, self.u_grid, initial=0.0,
+        )
+        dmstar = float(np.interp(zstar, z_grid, dm_grid))
+        return dmstar, rstar, rd, zstar, omega_de, hubble_grid
+
+
+def validate_early_background_table() -> dict[str, object]:
+    """Validate the committed interpolation table against 200 CAMB points."""
+    table = TableEarlyBackground()
+    rng = np.random.default_rng(170817)
+    differences = []
+    for _ in range(200):
+        h0 = rng.uniform(50.0, 95.0)
+        matter_h2 = rng.uniform(0.08, min(0.45, 0.85 * (h0 / 100.0) ** 2))
+        omega_m = matter_h2 / (h0 / 100.0) ** 2
+        omega_b = rng.uniform(0.018, 0.027)
+        exact = camb_lcdm_background(h0, omega_m, omega_b, table.z_grid)
+        fast = table.evaluate(h0, omega_m, omega_b, table.z_grid)
+        differences.append(
+            [
+                abs(fast[0] - exact[0]),
+                abs(fast[1] / exact[1] - 1.0),
+                abs(fast[2] / exact[2] - 1.0),
+                abs(fast[3] - exact[3]),
+                np.max(abs(fast[-1] / exact[-1] - 1.0)),
+                abs(100 * fast[1] / fast[0] - 100 * exact[1] / exact[0])
+                / CMB_THETA100_SIGMA,
+            ]
+        )
+    differences = np.asarray(differences)
+    keys = (
+        "dmstar_mpc",
+        "rstar_relative",
+        "rdrag_relative",
+        "zstar",
+        "hubble_relative",
+        "theta_star_sigma",
+    )
+    report: dict[str, object] = {
+        "n_holdout": len(differences),
+        "max_abs_error": dict(zip(keys, map(float, np.max(differences, axis=0)))),
+        "q99_abs_error": dict(
+            zip(keys, map(float, np.quantile(differences, 0.99, axis=0)))
+        ),
+        "camb_fallbacks": table.n_camb_fallbacks,
+        "training_grid_matter_h2": len(table.matter_h2_grid),
+        "training_grid_baryon_h2": len(table.baryon_h2_grid),
+    }
+    out = DESI_BBN_CMB_GW_CPL_MCMC_TABLES / "gw170817_early_background_validation.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return report
+
 
 DEFAULT_N_EVENTS = (100, 500, 1000, 3000)
 PARAMETER_NAMES = ("H0", "omegam", "omega_b", "w0", "wa")
@@ -100,7 +233,7 @@ OPTIMIZER_SCALE = np.asarray([10.0, 0.10, 0.001, 0.5, 2.0])
 
 def output_chain_root(n_events: int) -> Path:
     """CosmoMC chain prefix consumed by plot/plot_gw_w0_wa_4.py."""
-    return chain_root(f"DESI_BBN_CMB_GW_ET_CPL_N{n_events:04d}")
+    return joint_cpl_chain_root(n_events)
 
 
 class CPLJointLikelihood:
@@ -351,10 +484,27 @@ def main() -> None:
                         help="pipeline check: two chains with 800 accepted samples each")
     parser.add_argument("--check", action="store_true",
                         help="validate and optimize reference points without running MCMC")
+    parser.add_argument(
+        "--build-background-table",
+        action="store_true",
+        help="rebuild data/early_background_table.npz and exit",
+    )
+    parser.add_argument(
+        "--validate-background-table",
+        action="store_true",
+        help="compare the interpolation table against CAMB holdout points and exit",
+    )
     parser.add_argument("--fresh", action="store_true",
                         help="discard resumable Cobaya state and restart selected cases")
     parser.add_argument("--no-progress", action="store_true")
     args = parser.parse_args()
+
+    if args.build_background_table:
+        print(make_table())
+        return
+    if args.validate_background_table:
+        print(json.dumps(validate_early_background_table(), indent=2))
+        return
 
     counts = list(dict.fromkeys(args.n_events))
     if len(counts) != len(args.n_events):
@@ -382,7 +532,7 @@ def main() -> None:
             progress=not args.no_progress,
             fresh=args.fresh,
         )
-    print("Run: python3 plot/plot_gw_w0_wa_4.py --no-show")
+    print("Run: python3 plot/plot_gw_w0_wa_4.py")
 
 
 if __name__ == "__main__":

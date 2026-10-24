@@ -28,6 +28,7 @@ dist/
 *.aux
 *.bbl
 *.blg
+*Notes.bib
 *.fdb_latexmk
 *.fls
 *.log

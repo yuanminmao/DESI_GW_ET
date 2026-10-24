@@ -6,9 +6,9 @@ DETF-style FoM for CPL (w0, wa):
 Also reports the Mahalanobis separation of each posterior from LambdaCDM
 (w0=-1, wa=0).
 
-  python3 mcmc/gw_mcmc.py
+  python3 mcmc/gw_cpl_mcmc.py
   python3 mcmc/desi_bbn_cmb_gw_cpl_mcmc.py
-  python3 plot/plot_gw_w0_wa_4.py --no-show
+  python3 plot/plot_gw_w0_wa_4.py
 """
 
 from __future__ import annotations
@@ -23,8 +23,6 @@ from pathlib import Path
 import getdist
 from getdist.mcsamples import Density1D
 import matplotlib
-
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from getdist import loadMCSamples
@@ -34,13 +32,18 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from paths import setup_sys_path, FIGURES, TABLES, chain_root
+from paths import (
+    FIGURES,
+    PLOT_GW_W0_WA_4_TABLES,
+    gw_cpl_chain_root,
+    joint_cpl_chain_root,
+    setup_sys_path,
+)
 
 setup_sys_path()
 
 # Keep all artifacts named after this dedicated four-chain posterior plot.
-OUT_TXT = TABLES / "gw_w0_wa_4.txt"
-OUT_JSON = TABLES / "gw_w0_wa_4.json"
+OUT_JSON = PLOT_GW_W0_WA_4_TABLES / "gw_w0_wa_4.json"
 OUT_FIG = FIGURES / "gw_w0_wa_4.png"
 DEFAULT_N_EVENTS = (100, 500, 1000, 3000)
 BY_N_COLORS = {
@@ -677,11 +680,11 @@ def _sample_fom(samples) -> FoMResult:
 
 
 def _chain_root_for_n(n_events: int) -> Path:
-    return chain_root(f"GW_ET_N{n_events:04d}")
+    return gw_cpl_chain_root(n_events)
 
 
 def _joint_chain_root_for_n(n_events: int) -> Path:
-    return chain_root(f"DESI_BBN_CMB_GW_ET_CPL_N{n_events:04d}")
+    return joint_cpl_chain_root(n_events)
 
 
 def _format_by_n_table(cases: list[tuple[int, str, FoMResult]]) -> str:
@@ -888,8 +891,7 @@ def main_by_n(args: argparse.Namespace) -> None:
             f"FoM {gw_result.fom:.2f} -> {joint_result.fom:.2f}"
         )
     report = _format_by_n_table(rows) + "\n\n" + "\n\n".join(reports) + "\n"
-    args.out_txt.resolve().parent.mkdir(parents=True, exist_ok=True)
-    args.out_txt.write_text(report, encoding="utf-8")
+    print(report)
     json_cases = []
     for n_events in n_list:
         by_dataset = {
@@ -898,10 +900,12 @@ def main_by_n(args: argparse.Namespace) -> None:
             if count == n_events
         }
         json_cases.append({"N_GW": n_events, "constraints": by_dataset})
-    args.out_json.write_text(
+    out_json = args.out_json.resolve()
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(
         json.dumps({"cases": json_cases}, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Wrote: {args.out_txt.resolve()}\nWrote: {args.out_json.resolve()}")
+    print(f"Wrote: {out_json}")
     xlim, ylim = (PAPER_XLIM, PAPER_YLIM) if args.paper_limits else (DEFAULT_XLIM, DEFAULT_YLIM)
     plot_w0_wa_fom_grid_by_n(grid_sets, out_fig=args.out_fig.resolve(), xlim=xlim, ylim=ylim,
                              dpi=args.dpi, show=not args.no_show, smooth_sigma_2d=args.smooth_sigma_2d,
@@ -914,7 +918,6 @@ def main() -> None:
     )
     ap.add_argument("--n-events", type=int, nargs="+", default=list(DEFAULT_N_EVENTS),
                     help="N_GW values to plot (default: 100 500 1000 3000).")
-    ap.add_argument("--out-txt", type=Path, default=OUT_TXT)
     ap.add_argument("--out-json", type=Path, default=OUT_JSON)
     ap.add_argument(
         "--paper-limits",
